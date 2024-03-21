@@ -1,0 +1,385 @@
+@font-face {
+    font-family: 'podkova';
+    src: url('fonts/podkova.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'manrope';
+    src: url('fonts/manrope.ttf') format('truetype');
+}
+
+html, body{
+    background-color: #3D251E;
+    color: #F2E7D4;
+    margin: 0;
+    height: 100%;
+    /*text-wrap: pretty;*/
+    /*error says pretty doesn't exist*/
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*header*/
+header {
+    background-color: #F2E7D4;
+    color: #3D251E;
+    width: 100%;
+    box-shadow: 0px 6px 6px rgb(0, 0, 0, 0.2);
+}
+
+header a:link {
+    color: #84563C;
+}
+
+header a:visited {
+    color: #954A41;
+}
+
+/*hamburger menu*/
+    /*overall*/
+.menu {
+    vertical-align: center;
+    text-align: center;
+    font-family: 'podkova';
+    font-size: 1.2rem;
+    }
+
+    /*header box*/
+    .top-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #F2E7D4;
+    height: 85px;
+    padding: 1em;
+    }
+
+    .top-nav img {
+    max-height: 50px;
+    }
+
+    /*hamburger icon*/
+    .menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    }
+    
+    .menu > li {
+    margin: 0 1rem;
+    overflow: hidden;
+    text-decoration: none;
+    }
+    
+    .menu-button-container {
+    display: none;
+    height: 100%;
+    width: 50px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    #menu-toggle {
+    display: none;
+    }
+    
+    .menu-button,
+    .menu-button::before,
+    .menu-button::after {
+    display: block;
+    background-color: #3D251E;
+    position: absolute;
+    height: 8px;
+    width: 55px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 10px;
+    }
+    
+    .menu-button::before {
+    content: '';
+    margin-top: -18px;
+    }
+    
+    .menu-button::after {
+    content: '';
+    margin-top: 18px;
+    }
+    
+    #menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+    }
+    
+    #menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+    }
+    
+    #menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+    }
+    
+    /*pop-up menu*/
+    @media (max-width: 700px) {
+    .menu-button-container {
+        display: flex;
+    }
+
+    .menu {
+        position: absolute;
+        top: 0;
+        margin-top: 75px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #menu-toggle ~ .menu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    #menu-toggle:checked ~ .menu li {
+        border: .5px solid #3D251E;
+        height: 3em;
+        padding: .5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .menu > li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 1em 0;
+        width: 100%;
+        background-color: #F2E7D4;
+    }
+
+    .menu > li a {
+        padding: 0 10rem;
+        display:block;
+    }
+    }
+
+/*all text*/    
+
+/*headers*/
+h1, h2, h3, h4, h5, h6{
+    font-family: 'podkova', serif;
+}
+
+/*main text*/
+p, ul {
+    font-family: 'manrope', sans-serif;
+    font-weight: 275;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+    /*main text links*/
+p a:link {
+    color: #B08C69;
+}
+
+p a:visited{
+    color:#D3A292
+}
+
+/*images*/
+img {
+    max-width: 100%;
+}
+
+/*footer*/
+footer {
+    padding: .5rem;
+    text-align: center;
+    background-color: #F2E7D4;
+    color: #3D251E;
+}
+
+footer h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 450;
+}
+
+footer p {
+    margin: 0;
+    padding: .2rem;
+}
+
+footer a:link {
+    color: #84563C;
+}
+
+footer a:visited {
+    color:#954A41
+}
+
+/*homepage*/
+.intro-message {
+    text-align:center;
+}
+
+.intro-message h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 0.07rem;
+    line-height: 3.5rem;
+    margin: 2rem auto 1rem;
+}
+
+.intro-message p {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.home-pic {
+margin-top: 2rem;
+align-items: center;
+}
+
+/*about me page*/
+.about-me-pic {
+    margin: .5rem;
+}
+
+.about-me-pic img {
+    border-radius: 1rem;
+    border: .2rem solid #A3B18A;
+    box-shadow: 0px 6px 6px rgb(0, 0, 0, 0.2);
+}
+
+.bio {
+    margin: 0 2rem;
+}
+
+.bio h1 {
+    margin: 1rem 0;
+    letter-spacing: 0.06rem;
+    text-decoration: underline #A3B18A;
+    text-underline-offset: .3rem;
+}
+
+.bio p {
+    letter-spacing: 0.01rem;
+    line-height: 1.45rem;
+}
+
+/*portfolio page*/
+.portfolio-pic {
+    margin: .5rem;
+}
+
+.portfolio-pic img {
+    border-radius: 1rem;
+    border: .2rem solid #A3B18A;
+    box-shadow: 0px 6px 6px rgb(0, 0, 0, 0.2);
+}
+
+.portfolio-text {
+    margin: 0 2rem 1.5rem;
+}
+
+.portfolio-text h1{
+    margin: 1.5rem 0;
+    letter-spacing: 0.06rem;
+    text-decoration: underline #A3B18A;
+    text-underline-offset: .3rem;
+}
+
+.portfolio-text h3 {
+    margin: 3rem 0 .25rem 0;
+    font-size: 1.35rem;
+    font-weight: 500;
+}
+
+.portfolio-text p, ul {
+    letter-spacing: 0.01rem;
+    line-height: 1.45rem;
+    margin: .5rem 0;
+}
+
+/*restructure of dlw page*/
+.dlw-pic {
+    margin: .5rem;
+}
+
+.dlw-pic img {
+    border-radius: 1rem;
+    border: .2rem solid #A3B18A;
+    box-shadow: 0px 6px 6px rgb(0, 0, 0, 0.2);
+}
+
+.dlw-explanation {
+    margin: 0 2rem;
+}
+
+.dlw-explanation h1 {
+    margin: 1rem 0;
+    letter-spacing: 0.06rem;
+    text-decoration: underline #A3B18A;
+    text-underline-offset: .3rem;
+}
+
+.dlw-explanation h3 {
+    margin: .35rem 0;
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.035rem;
+}
+
+.dlw-explanation p {
+    margin: 1rem;
+    letter-spacing: 0.01rem;
+    line-height: 1.45rem;
+}
+
+.resume {
+    margin: 2rem;
+}
+
+.resume h1 {
+    margin: 1.5rem 0;
+    letter-spacing: 0.06rem;
+    text-decoration: underline #A3B18A;
+    text-underline-offset: .3rem;
+}
+
+.resume h2 {
+    margin: 3rem 0 0;
+    font-size: 1.7rem;
+    font-weight: 500;
+    letter-spacing: 0.07rem;
+}
+
+.resume h3 {
+    margin: 2.2rem 0 .1rem;
+    font-size: 1.4rem;
+    font-weight: 450;
+    letter-spacing: 0.06rem;
+}
+
+.resume p, a {
+    margin: 1rem 0 0.75rem;
+    letter-spacing: 0.01rem;
+    line-height: 1.45rem;
+}
