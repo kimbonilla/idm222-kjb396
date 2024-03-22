@@ -13,7 +13,7 @@ html, body{
     color: #F2E7D4;
     margin: 0;
     height: 100%;
-    /*text-wrap: pretty;*/
+    text-wrap: pretty;
     /*error says pretty doesn't exist*/
 }
 
@@ -37,13 +37,13 @@ header a:visited {
     color: #954A41;
 }
 
-/*hamburger menu*/
+/*nav bar*/
     /*overall*/
 .menu {
     vertical-align: center;
     text-align: center;
     font-family: 'podkova';
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     }
 
     /*header box*/
@@ -73,7 +73,6 @@ header a:visited {
     .menu > li {
     margin: 0 1rem;
     overflow: hidden;
-    text-decoration: none;
     }
     
     .menu-button-container {
@@ -127,7 +126,7 @@ header a:visited {
     }
     
     /*pop-up menu*/
-    @media (max-width: 700px) {
+    @media (max-width: 699px) {
     .menu-button-container {
         display: flex;
     }
@@ -152,7 +151,7 @@ header a:visited {
     }
 
     #menu-toggle:checked ~ .menu li {
-        border: .5px solid #3D251E;
+        border: .75px solid #3D251E;
         height: 3em;
         padding: .5em;
         transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
@@ -254,7 +253,6 @@ footer a:visited {
 
 .home-pic {
 margin-top: 2rem;
-align-items: center;
 }
 
 /*about me page*/
@@ -382,4 +380,153 @@ align-items: center;
     margin: 1rem 0 0.75rem;
     letter-spacing: 0.01rem;
     line-height: 1.45rem;
+}
+
+/*tablet*/
+@media (min-width: 700px) and (max-width: 1039px){
+    /*homepage*/
+    .intro-message p{
+        max-width: 400px;
+    }
+
+    .home-pic img{
+        display: block;
+        max-width: 700px;
+        margin: auto;
+    }
+
+    /*about me*/
+    .about-me-pic img {
+        display: block;
+        margin: 0 auto;
+        max-height: 50vh;
+    }
+
+    .bio {
+        margin: 0 100px;
+    }
+
+    /*Portfolio*/
+    .portfolio-pic img{
+        display: block;
+        max-height: 40vh;
+        margin: 0 auto;
+    }
+
+    .portfolio-text{
+            margin: 0 100px;
+        }
+    }
+
+/*desktop*/
+@media (min-width:1024px){
+    /*all text*/
+    h1 {
+        font-size: 4rem;
+    }
+
+    p, li, a {
+        font-size: 1.25rem;
+        line-height: 1.7rem;
+        letter-spacing: 0.04rem;
+    }
+
+    /*homepage*/
+    .home-container {
+        display: grid;
+        grid-template-columns: 50vw 50vw;
+    }
+
+    .intro-message {
+        display: grid;
+        justify-content: end;
+        padding-left: 50px;
+    }
+
+    .intro-message h1 {
+        font-size: 6rem;
+        letter-spacing: 0.01rem;
+        line-height: 5rem;
+        text-align: left;
+    }
+
+    .intro-message p {
+        font-size: 2.5rem;
+        line-height: 3rem;
+        max-width: 500px;
+        text-align: left;
+    }
+
+    .home-pic img{
+        display: block;
+        max-height: 85vh;
+        max-width: 50vw;
+    }
+
+    /*about me*/
+    .about-me-pic img{
+        display: block;
+        max-width: 900px;
+        max-height: 60vh;
+        margin: 20px auto;
+    }
+
+    .bio {
+        display: block;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    /*portfolio*/
+    .portfolio-pic img {
+        display: block;
+        max-height: 50vh;
+        margin: 0 auto;
+    }
+
+    .portfolio-text{
+        display: block;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .portfolio-text h3{
+        font-size: 2rem;
+    }
+
+    /*resume*/
+    .resume{
+        display: block;
+        max-width: 900px;
+        margin: 0 auto 50px;
+    }
+    
+    .resume h2 {
+        font-size: 3rem;
+    }
+
+    .resume h3{
+        font-size: 2rem;
+    }
+
+    /*dlw restructure*/
+    .dlw-pic img{
+        display: block;
+        max-height: 60vh;
+        margin: 0 auto;
+    }
+
+    .dlw-explanation{
+        display: block;
+        max-width: 900px;
+        margin: 0 auto 50px;
+    }
+
+    .dlw-explanation h2{
+        font-size: 3rem;
+    }
+
+    .dlw-explanation h3{
+        font-size: 2rem;
+    }
 }
